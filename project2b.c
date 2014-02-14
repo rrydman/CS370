@@ -15,6 +15,24 @@
 #define BUFF_SIZE	256
 #define ARG_COUNT	20
 
+void forkPro(char **command){
+	unsigned int pid = fork();
+	int status;
+	int errno;
+	if (pid == -1){
+		printf("Could not fork!");
+	} else if (pid == 0){
+		close(2);
+		dup(1);
+		int success = execvp(command[0], command);
+		if (success == -1)
+				printf("Command not found!\n");
+		exit(errno);
+	} else {
+	waitpid(pid, &status, WUNTRACED);
+	}
+}
+
 void splitString(char *str, char **splitstr) 
 {      
 	char *p;      
@@ -35,8 +53,15 @@ int main(void)
 {
 	int exited = 0;
 	int broken = 0;
+	int printedHistory = 0;
+	char* history[10]; // command history array
+	int histCounter = 0;
+	// fill history array
+	int i;
+	for (i=0; i<10; i++){
+		history[i] = (char*)malloc(BUFF_SIZE);
+	}
 	struct termios origConfig;
-	
 	// Get original config
 	tcgetattr(0, &origConfig);
 	// Copy config
@@ -51,15 +76,19 @@ int main(void)
 	while (exited != 1) {
 		broken = 0;
 		// print cwd shell prompt
-		char *cwdbuf = (char *)malloc(100);
-		getcwd(cwdbuf,100);
-		printf("%s -> ", cwdbuf);
-		fflush(stdout);
-		free(cwdbuf);
+		if (printedHistory == 0){
+			char *cwdbuf = (char *)malloc(100);
+			getcwd(cwdbuf,100);
+			printf("%s -> ", cwdbuf);
+			fflush(stdout);
+			free(cwdbuf);
+		}
 		char inbuffer[BUFF_SIZE];
 		int bytesRead = 0;
 		char *c = malloc(sizeof(char));
 		char *space = malloc(sizeof(char));
+		char *bs = malloc(sizeof(char));
+		*bs = '\b';
 		*space = ' ';
 		while (broken == 0){
 			read(0, c, 1); // Read one character
@@ -72,8 +101,24 @@ int main(void)
 				read(0, c, 1);
 				if (*c == 91){
 					read(0,c,1);
-					if (*c == 65) broken = 3; // up arrow
-					if (*c == 66) broken = 4; // down arrow
+					if (*c == 65){
+						broken = 3; // up arrow
+						while (bytesRead > 0){
+							write(2, bs, 1);
+							write(2, space, 1);
+							write(2, bs, 1);
+							bytesRead--;
+						}
+					}
+					if (*c == 66) {
+                                                broken = 4; // down arrow
+                                                while (bytesRead > 0){
+                                                        write(2, bs, 1);
+                                                        write(2, space, 1);
+                                                        write(2, bs, 1);
+                                                        bytesRead--;
+                                                }
+                                        }
 					if (*c == 67) continue; // left arrow
 					if (*c == 68) continue; // right arrow
 					continue;
@@ -95,25 +140,38 @@ int main(void)
 				inbuffer[bytesRead] = '\0';
 			}
 		}
-		// store buffer to history 
-			// todo
+		// Create tokenized command
+		char *command[ARG_COUNT] = {NULL};
+		splitString(inbuffer, command);
+		if (command[0] == NULL) continue; // Nothing typed - loop again
+		// store buffer to history
+		if (histCounter == 9){
+			for(i=1;i<10;i++){
+				history[i-1] = history[i];
+				strcpy(history[histCounter], *command);
+			}
+		} else {
+			strcpy(history[histCounter], *command);
+			histCounter++;
+		}
 		if (broken > 2){
-			// clear input
-			printf("Up/down arrow detected. History not implemnted fully yet.\n");
-				// execute appropriate command to generate corresponding msg
-			// print message
+			// Up arrow
+			if (broken == 3){
+				printf("%s", history[0]);
+				fflush(stdout);
+				//forkPro(history[0]);
+			}
+			// Down arrow
+			if (broken == 4){
+			
+			}
+			printf("\nCould not get history to work right in time. So close, yet so far.\n");
+			fflush(stdout);
+			//printedHistory = 1;
 		}
 		else {
-			// parse input into an array
-			char *command[ARG_COUNT] = {NULL};
-			splitString(inbuffer, command);
-
-			// Loop again if no input provided
-			if (command[0] == NULL){
-				continue;
-			}
 			// if cd command then change working directory
-			else if (strcmp(command[0], "cd") == 0) {
+			if (strcmp(command[0], "cd") == 0) {
 				int error = chdir(command[1]);
 				if (error == -1)
 					perror("Error changing directory.\n");
@@ -125,23 +183,9 @@ int main(void)
 			}
 			// if not cd or exit, execute command
 			else {
-				unsigned int pid = fork();
-				int status;
-				int errno;
-				if (pid == -1){
-					printf("Could not fork!");
-				} else if (pid == 0){
-					close(2);
-					dup(1);
-					int success = execvp(command[0], command);
-					if (success == -1)
-						printf("Command not found!\n");
-					exit(errno);
-				} else {
-				waitpid(pid, &status, WUNTRACED);
-				}		
+				forkPro(command);
 			}
-
+		printedHistory = 0;
 		}
 	}
 	// restore input config
