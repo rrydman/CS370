@@ -11,18 +11,34 @@ using namespace std;
 
 // Globals
 int clock = 0;
+int pidCounter = 0;
 
 class Process {
+public:
 	int pid;
+	int arrivalTime;
+	int niceValue;
 	int startTime;
 	int endTime;
 	int priority;
 	int timeslice;
 	vector<int> cpuBursts;
 	vector<int> ioBursts;
-public:
-	Process(int, int, int, int, int, vector<int>, vector<int>);
+	Process(int, int, vector<int>, vector<int>);
 };
+
+Process::Process(int arr, int nice, vector<int> cpuB, vector<int> ioB) {
+	pid = pidCounter;
+	pidCounter++;
+	arrivalTime = arr;
+	niceValue = nice;
+	cpuBursts = cpuB;
+	ioBursts = ioB;
+	startTime = 0;
+	endTime = 0;
+	priority = 0;
+	timeslice = 0;
+}
 
 int calc_priority(){
 	return 0;
@@ -41,7 +57,17 @@ istream& read_input(istream& in, vector<Process>& processList){
 				break;
 			}
 			else {
-				cout << line << endl;
+				// Construct process from input line
+				vector<int> cpuB;
+				vector<int> ioB;
+				// First col is nice value
+				// Second column is arrival time
+				// Third is number of cpu bursts (remember io bursts is cpu -1)
+					// store this and use it to calculate iterations of cpu/io burst loads
+				// Fourth is cpu burst time
+					// cpuB[0] = this value;
+				// Subsequent is io/cpu/io/cpu etc
+
 			}
 
 		}
