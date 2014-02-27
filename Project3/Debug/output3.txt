@@ -1,0 +1,915 @@
+[100] <0> Enters ready Queue (Priority: 120, Timeslice: 51)
+[100] <0> Enters the CPU
+[150] <1> Enters ready Queue (Priority: 121, Timeslice: 49)
+[150] <0> Finishes its time slice and moves to the Expired Queue (Priority: 125, Timeslice: 41)
+[151] <1> Enters the CPU
+[199] <1> Finishes its time slice and moves to the Expired Queue (Priority: 126, Timeslice: 39)
+[199] *** Queue Swap
+[200] <2> Enters ready Queue (Priority: 122, Timeslice: 47)
+[200] <2> Enters the CPU
+[246] <2> Finishes its time slice and moves to the Expired Queue (Priority: 127, Timeslice: 37)
+[247] <0> Enters the CPU
+[250] <3> Enters ready Queue (Priority: 123, Timeslice: 45)
+[250] <3> Preempts Process 0
+[294] <3> Finishes its time slice and moves to the Expired Queue (Priority: 128, Timeslice: 35)
+[295] <0> Enters the CPU
+[332] <0> Finishes its time slice and moves to the Expired Queue (Priority: 130, Timeslice: 31)
+[333] <1> Enters the CPU
+[371] <1> Finishes its time slice and moves to the Expired Queue (Priority: 131, Timeslice: 29)
+[371] *** Queue Swap
+[372] <2> Enters the CPU
+[408] <2> Finishes its time slice and moves to the Expired Queue (Priority: 132, Timeslice: 27)
+[409] <3> Enters the CPU
+[443] <3> Finishes its time slice and moves to the Expired Queue (Priority: 133, Timeslice: 25)
+[444] <0> Enters the CPU
+[474] <0> Finishes its time slice and moves to the Expired Queue (Priority: 135, Timeslice: 20)
+[475] <1> Enters the CPU
+[503] <1> Finishes its time slice and moves to the Expired Queue (Priority: 136, Timeslice: 18)
+[503] *** Queue Swap
+[504] <2> Enters the CPU
+[530] <2> Finishes its time slice and moves to the Expired Queue (Priority: 137, Timeslice: 16)
+[531] <3> Enters the CPU
+[555] <3> Finishes its time slice and moves to the Expired Queue (Priority: 138, Timeslice: 14)
+[556] <0> Enters the CPU
+[575] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[576] <1> Enters the CPU
+[593] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[593] *** Queue Swap
+[594] <2> Enters the CPU
+[609] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[610] <3> Enters the CPU
+[623] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[624] <0> Enters the CPU
+[633] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[634] <1> Enters the CPU
+[643] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[643] *** Queue Swap
+[644] <2> Enters the CPU
+[653] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[654] <3> Enters the CPU
+[663] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[664] <0> Enters the CPU
+[673] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[674] <1> Enters the CPU
+[683] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[683] *** Queue Swap
+[684] <2> Enters the CPU
+[693] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[694] <3> Enters the CPU
+[703] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[704] <0> Enters the CPU
+[713] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[714] <1> Enters the CPU
+[723] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[723] *** Queue Swap
+[724] <2> Enters the CPU
+[733] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[734] <3> Enters the CPU
+[743] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[744] <0> Enters the CPU
+[753] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[754] <1> Enters the CPU
+[763] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[763] *** Queue Swap
+[764] <2> Enters the CPU
+[773] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[774] <3> Enters the CPU
+[783] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[784] <0> Enters the CPU
+[793] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[794] <1> Enters the CPU
+[803] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[803] *** Queue Swap
+[804] <2> Enters the CPU
+[813] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[814] <3> Enters the CPU
+[823] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[824] <0> Enters the CPU
+[833] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[834] <1> Enters the CPU
+[843] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[843] *** Queue Swap
+[844] <2> Enters the CPU
+[853] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[854] <3> Enters the CPU
+[863] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[864] <0> Enters the CPU
+[873] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[874] <1> Enters the CPU
+[883] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[883] *** Queue Swap
+[884] <2> Enters the CPU
+[893] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[894] <3> Enters the CPU
+[903] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[904] <0> Enters the CPU
+[913] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[914] <1> Enters the CPU
+[923] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[923] *** Queue Swap
+[924] <2> Enters the CPU
+[933] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[934] <3> Enters the CPU
+[943] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[944] <0> Enters the CPU
+[953] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[954] <1> Enters the CPU
+[963] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[963] *** Queue Swap
+[964] <2> Enters the CPU
+[973] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[974] <3> Enters the CPU
+[983] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[984] <0> Enters the CPU
+[993] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[994] <1> Enters the CPU
+[1003] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1003] *** Queue Swap
+[1004] <2> Enters the CPU
+[1013] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1014] <3> Enters the CPU
+[1023] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1024] <0> Enters the CPU
+[1033] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1034] <1> Enters the CPU
+[1043] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1043] *** Queue Swap
+[1044] <2> Enters the CPU
+[1053] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1054] <3> Enters the CPU
+[1063] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1064] <0> Enters the CPU
+[1073] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1074] <1> Enters the CPU
+[1083] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1083] *** Queue Swap
+[1084] <2> Enters the CPU
+[1093] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1094] <3> Enters the CPU
+[1103] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1104] <0> Enters the CPU
+[1113] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1114] <1> Enters the CPU
+[1123] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1123] *** Queue Swap
+[1124] <2> Enters the CPU
+[1133] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1134] <3> Enters the CPU
+[1143] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1144] <0> Enters the CPU
+[1153] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1154] <1> Enters the CPU
+[1163] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1163] *** Queue Swap
+[1164] <2> Enters the CPU
+[1173] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1174] <3> Enters the CPU
+[1183] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1184] <0> Enters the CPU
+[1193] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1194] <1> Enters the CPU
+[1203] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1203] *** Queue Swap
+[1204] <2> Enters the CPU
+[1213] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1214] <3> Enters the CPU
+[1223] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1224] <0> Enters the CPU
+[1230] <0> Moves to the IO Queue
+[1231] <1> Enters the CPU
+[1240] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1240] *** Queue Swap
+[1241] <2> Enters the CPU
+[1250] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1251] <3> Enters the CPU
+[1260] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1261] <1> Enters the CPU
+[1265] <1> Moves to the IO Queue
+[1265] *** Queue Swap
+[1266] <2> Enters the CPU
+[1275] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1276] <3> Enters the CPU
+[1285] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1285] *** Queue Swap
+[1286] <2> Enters the CPU
+[1288] <2> Moves to the IO Queue
+[1289] <3> Enters the CPU
+[1298] <3> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1298] *** Queue Swap
+[1299] <3> Enters the CPU
+[1299] <3> Finishes and moves to the Finished Queue
+[1530] <0> Finishes IO and moves to the Ready Queue
+[1531] <0> Enters the CPU
+[1533] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1533] *** Queue Swap
+[1534] <0> Enters the CPU
+[1543] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1543] *** Queue Swap
+[1544] <0> Enters the CPU
+[1553] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1553] *** Queue Swap
+[1554] <0> Enters the CPU
+[1563] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1563] *** Queue Swap
+[1564] <0> Enters the CPU
+[1565] <1> Finishes IO and moves to the Ready Queue
+[1573] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1574] <1> Enters the CPU
+[1578] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1578] *** Queue Swap
+[1579] <0> Enters the CPU
+[1588] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1588] <2> Finishes IO and moves to the Ready Queue
+[1589] <1> Enters the CPU
+[1598] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1599] <2> Enters the CPU
+[1605] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1605] *** Queue Swap
+[1606] <0> Enters the CPU
+[1615] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1616] <1> Enters the CPU
+[1625] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1626] <2> Enters the CPU
+[1635] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1635] *** Queue Swap
+[1636] <0> Enters the CPU
+[1645] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1646] <1> Enters the CPU
+[1655] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1656] <2> Enters the CPU
+[1665] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1665] *** Queue Swap
+[1666] <0> Enters the CPU
+[1675] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1676] <1> Enters the CPU
+[1685] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1686] <2> Enters the CPU
+[1695] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1695] *** Queue Swap
+[1696] <0> Enters the CPU
+[1705] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1706] <1> Enters the CPU
+[1715] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1716] <2> Enters the CPU
+[1725] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1725] *** Queue Swap
+[1726] <0> Enters the CPU
+[1735] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1736] <1> Enters the CPU
+[1745] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1746] <2> Enters the CPU
+[1755] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1755] *** Queue Swap
+[1756] <0> Enters the CPU
+[1765] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1766] <1> Enters the CPU
+[1775] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1776] <2> Enters the CPU
+[1785] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1785] *** Queue Swap
+[1786] <0> Enters the CPU
+[1795] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1796] <1> Enters the CPU
+[1805] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1806] <2> Enters the CPU
+[1815] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1815] *** Queue Swap
+[1816] <0> Enters the CPU
+[1825] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1826] <1> Enters the CPU
+[1835] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1836] <2> Enters the CPU
+[1845] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1845] *** Queue Swap
+[1846] <0> Enters the CPU
+[1855] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1856] <1> Enters the CPU
+[1865] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1866] <2> Enters the CPU
+[1875] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1875] *** Queue Swap
+[1876] <0> Enters the CPU
+[1885] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1886] <1> Enters the CPU
+[1895] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1896] <2> Enters the CPU
+[1905] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1905] *** Queue Swap
+[1906] <0> Enters the CPU
+[1915] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1916] <1> Enters the CPU
+[1925] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1926] <2> Enters the CPU
+[1935] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1935] *** Queue Swap
+[1936] <0> Enters the CPU
+[1945] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1946] <1> Enters the CPU
+[1955] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1956] <2> Enters the CPU
+[1965] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1965] *** Queue Swap
+[1966] <0> Enters the CPU
+[1975] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1976] <1> Enters the CPU
+[1985] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1986] <2> Enters the CPU
+[1995] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[1995] *** Queue Swap
+[1996] <0> Enters the CPU
+[2005] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2006] <1> Enters the CPU
+[2015] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2016] <2> Enters the CPU
+[2025] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2025] *** Queue Swap
+[2026] <0> Enters the CPU
+[2035] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2036] <1> Enters the CPU
+[2045] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2046] <2> Enters the CPU
+[2055] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2055] *** Queue Swap
+[2056] <0> Enters the CPU
+[2065] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2066] <1> Enters the CPU
+[2075] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2076] <2> Enters the CPU
+[2085] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2085] *** Queue Swap
+[2086] <0> Enters the CPU
+[2095] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2096] <1> Enters the CPU
+[2105] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2106] <2> Enters the CPU
+[2115] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2115] *** Queue Swap
+[2116] <0> Enters the CPU
+[2125] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2126] <1> Enters the CPU
+[2135] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2136] <2> Enters the CPU
+[2145] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2145] *** Queue Swap
+[2146] <0> Enters the CPU
+[2155] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2156] <1> Enters the CPU
+[2165] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2166] <2> Enters the CPU
+[2175] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2175] *** Queue Swap
+[2176] <0> Enters the CPU
+[2185] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2186] <1> Enters the CPU
+[2195] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2196] <2> Enters the CPU
+[2205] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2205] *** Queue Swap
+[2206] <0> Enters the CPU
+[2215] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2216] <1> Enters the CPU
+[2225] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2226] <2> Enters the CPU
+[2235] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2235] *** Queue Swap
+[2236] <0> Enters the CPU
+[2245] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2246] <1> Enters the CPU
+[2255] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2256] <2> Enters the CPU
+[2265] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2265] *** Queue Swap
+[2266] <0> Enters the CPU
+[2275] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2276] <1> Enters the CPU
+[2285] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2286] <2> Enters the CPU
+[2295] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2295] *** Queue Swap
+[2296] <0> Enters the CPU
+[2305] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2306] <1> Enters the CPU
+[2315] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2316] <2> Enters the CPU
+[2325] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2325] *** Queue Swap
+[2326] <0> Enters the CPU
+[2332] <0> Moves to the IO Queue
+[2333] <1> Enters the CPU
+[2342] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2343] <2> Enters the CPU
+[2352] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2352] *** Queue Swap
+[2353] <1> Enters the CPU
+[2362] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2363] <2> Enters the CPU
+[2372] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2372] *** Queue Swap
+[2373] <1> Enters the CPU
+[2382] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2383] <2> Enters the CPU
+[2392] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2392] *** Queue Swap
+[2393] <1> Enters the CPU
+[2402] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2403] <2> Enters the CPU
+[2412] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2412] *** Queue Swap
+[2413] <1> Enters the CPU
+[2417] <1> Moves to the IO Queue
+[2418] <2> Enters the CPU
+[2427] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2427] *** Queue Swap
+[2428] <2> Enters the CPU
+[2430] <2> Moves to the IO Queue
+[2632] <0> Finishes IO and moves to the Ready Queue
+[2633] <0> Enters the CPU
+[2635] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2635] *** Queue Swap
+[2636] <0> Enters the CPU
+[2645] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2645] *** Queue Swap
+[2646] <0> Enters the CPU
+[2655] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2655] *** Queue Swap
+[2656] <0> Enters the CPU
+[2665] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2665] *** Queue Swap
+[2666] <0> Enters the CPU
+[2675] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2675] *** Queue Swap
+[2676] <0> Enters the CPU
+[2685] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2685] *** Queue Swap
+[2686] <0> Enters the CPU
+[2695] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2695] *** Queue Swap
+[2696] <0> Enters the CPU
+[2705] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2705] *** Queue Swap
+[2706] <0> Enters the CPU
+[2715] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2715] *** Queue Swap
+[2716] <0> Enters the CPU
+[2717] <1> Finishes IO and moves to the Ready Queue
+[2725] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2726] <1> Enters the CPU
+[2730] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2730] <2> Finishes IO and moves to the Ready Queue
+[2731] <2> Enters the CPU
+[2737] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2737] *** Queue Swap
+[2738] <0> Enters the CPU
+[2747] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2748] <1> Enters the CPU
+[2757] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2758] <2> Enters the CPU
+[2767] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2767] *** Queue Swap
+[2768] <0> Enters the CPU
+[2777] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2778] <1> Enters the CPU
+[2787] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2788] <2> Enters the CPU
+[2797] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2797] *** Queue Swap
+[2798] <0> Enters the CPU
+[2807] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2808] <1> Enters the CPU
+[2817] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2818] <2> Enters the CPU
+[2827] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2827] *** Queue Swap
+[2828] <0> Enters the CPU
+[2837] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2838] <1> Enters the CPU
+[2847] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2848] <2> Enters the CPU
+[2857] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2857] *** Queue Swap
+[2858] <0> Enters the CPU
+[2867] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2868] <1> Enters the CPU
+[2877] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2878] <2> Enters the CPU
+[2887] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2887] *** Queue Swap
+[2888] <0> Enters the CPU
+[2897] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2898] <1> Enters the CPU
+[2907] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2908] <2> Enters the CPU
+[2917] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2917] *** Queue Swap
+[2918] <0> Enters the CPU
+[2927] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2928] <1> Enters the CPU
+[2937] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2938] <2> Enters the CPU
+[2947] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2947] *** Queue Swap
+[2948] <0> Enters the CPU
+[2957] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2958] <1> Enters the CPU
+[2967] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2968] <2> Enters the CPU
+[2977] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2977] *** Queue Swap
+[2978] <0> Enters the CPU
+[2987] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2988] <1> Enters the CPU
+[2997] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[2998] <2> Enters the CPU
+[3007] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3007] *** Queue Swap
+[3008] <0> Enters the CPU
+[3017] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3018] <1> Enters the CPU
+[3027] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3028] <2> Enters the CPU
+[3037] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3037] *** Queue Swap
+[3038] <0> Enters the CPU
+[3047] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3048] <1> Enters the CPU
+[3057] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3058] <2> Enters the CPU
+[3067] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3067] *** Queue Swap
+[3068] <0> Enters the CPU
+[3077] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3078] <1> Enters the CPU
+[3087] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3088] <2> Enters the CPU
+[3097] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3097] *** Queue Swap
+[3098] <0> Enters the CPU
+[3107] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3108] <1> Enters the CPU
+[3117] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3118] <2> Enters the CPU
+[3127] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3127] *** Queue Swap
+[3128] <0> Enters the CPU
+[3137] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3138] <1> Enters the CPU
+[3147] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3148] <2> Enters the CPU
+[3157] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3157] *** Queue Swap
+[3158] <0> Enters the CPU
+[3167] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3168] <1> Enters the CPU
+[3177] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3178] <2> Enters the CPU
+[3187] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3187] *** Queue Swap
+[3188] <0> Enters the CPU
+[3197] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3198] <1> Enters the CPU
+[3207] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3208] <2> Enters the CPU
+[3217] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3217] *** Queue Swap
+[3218] <0> Enters the CPU
+[3227] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3228] <1> Enters the CPU
+[3237] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3238] <2> Enters the CPU
+[3247] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3247] *** Queue Swap
+[3248] <0> Enters the CPU
+[3257] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3258] <1> Enters the CPU
+[3267] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3268] <2> Enters the CPU
+[3277] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3277] *** Queue Swap
+[3278] <0> Enters the CPU
+[3287] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3288] <1> Enters the CPU
+[3297] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3298] <2> Enters the CPU
+[3307] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3307] *** Queue Swap
+[3308] <0> Enters the CPU
+[3317] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3318] <1> Enters the CPU
+[3327] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3328] <2> Enters the CPU
+[3337] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3337] *** Queue Swap
+[3338] <0> Enters the CPU
+[3344] <0> Moves to the IO Queue
+[3345] <1> Enters the CPU
+[3354] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3355] <2> Enters the CPU
+[3364] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3364] *** Queue Swap
+[3365] <1> Enters the CPU
+[3374] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3375] <2> Enters the CPU
+[3384] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3384] *** Queue Swap
+[3385] <1> Enters the CPU
+[3394] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3395] <2> Enters the CPU
+[3404] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3404] *** Queue Swap
+[3405] <1> Enters the CPU
+[3414] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3415] <2> Enters the CPU
+[3424] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3424] *** Queue Swap
+[3425] <1> Enters the CPU
+[3434] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3435] <2> Enters the CPU
+[3444] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3444] *** Queue Swap
+[3445] <1> Enters the CPU
+[3454] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3455] <2> Enters the CPU
+[3464] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3464] *** Queue Swap
+[3465] <1> Enters the CPU
+[3474] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3475] <2> Enters the CPU
+[3484] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3484] *** Queue Swap
+[3485] <1> Enters the CPU
+[3494] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3495] <2> Enters the CPU
+[3504] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3504] *** Queue Swap
+[3505] <1> Enters the CPU
+[3514] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3515] <2> Enters the CPU
+[3524] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3524] *** Queue Swap
+[3525] <1> Enters the CPU
+[3529] <1> Moves to the IO Queue
+[3530] <2> Enters the CPU
+[3532] <2> Moves to the IO Queue
+[3644] <0> Finishes IO and moves to the Ready Queue
+[3645] <0> Enters the CPU
+[3647] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3647] *** Queue Swap
+[3648] <0> Enters the CPU
+[3657] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3657] *** Queue Swap
+[3658] <0> Enters the CPU
+[3667] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3667] *** Queue Swap
+[3668] <0> Enters the CPU
+[3677] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3677] *** Queue Swap
+[3678] <0> Enters the CPU
+[3687] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3687] *** Queue Swap
+[3688] <0> Enters the CPU
+[3697] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3697] *** Queue Swap
+[3698] <0> Enters the CPU
+[3707] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3707] *** Queue Swap
+[3708] <0> Enters the CPU
+[3717] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3717] *** Queue Swap
+[3718] <0> Enters the CPU
+[3727] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3727] *** Queue Swap
+[3728] <0> Enters the CPU
+[3737] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3737] *** Queue Swap
+[3738] <0> Enters the CPU
+[3747] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3747] *** Queue Swap
+[3748] <0> Enters the CPU
+[3757] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3757] *** Queue Swap
+[3758] <0> Enters the CPU
+[3767] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3767] *** Queue Swap
+[3768] <0> Enters the CPU
+[3777] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3777] *** Queue Swap
+[3778] <0> Enters the CPU
+[3787] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3787] *** Queue Swap
+[3788] <0> Enters the CPU
+[3797] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3797] *** Queue Swap
+[3798] <0> Enters the CPU
+[3807] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3807] *** Queue Swap
+[3808] <0> Enters the CPU
+[3817] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3817] *** Queue Swap
+[3818] <0> Enters the CPU
+[3827] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3827] *** Queue Swap
+[3828] <0> Enters the CPU
+[3829] <1> Finishes IO and moves to the Ready Queue
+[3832] <2> Finishes IO and moves to the Ready Queue
+[3837] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3838] <1> Enters the CPU
+[3842] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3843] <2> Enters the CPU
+[3849] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3849] *** Queue Swap
+[3850] <0> Enters the CPU
+[3859] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3860] <1> Enters the CPU
+[3869] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3870] <2> Enters the CPU
+[3879] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3879] *** Queue Swap
+[3880] <0> Enters the CPU
+[3889] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3890] <1> Enters the CPU
+[3899] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3900] <2> Enters the CPU
+[3909] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3909] *** Queue Swap
+[3910] <0> Enters the CPU
+[3919] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3920] <1> Enters the CPU
+[3929] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3930] <2> Enters the CPU
+[3939] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3939] *** Queue Swap
+[3940] <0> Enters the CPU
+[3949] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3950] <1> Enters the CPU
+[3959] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3960] <2> Enters the CPU
+[3969] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3969] *** Queue Swap
+[3970] <0> Enters the CPU
+[3979] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3980] <1> Enters the CPU
+[3989] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3990] <2> Enters the CPU
+[3999] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[3999] *** Queue Swap
+[4000] <0> Enters the CPU
+[4009] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4010] <1> Enters the CPU
+[4019] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4020] <2> Enters the CPU
+[4029] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4029] *** Queue Swap
+[4030] <0> Enters the CPU
+[4039] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4040] <1> Enters the CPU
+[4049] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4050] <2> Enters the CPU
+[4059] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4059] *** Queue Swap
+[4060] <0> Enters the CPU
+[4069] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4070] <1> Enters the CPU
+[4079] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4080] <2> Enters the CPU
+[4089] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4089] *** Queue Swap
+[4090] <0> Enters the CPU
+[4099] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4100] <1> Enters the CPU
+[4109] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4110] <2> Enters the CPU
+[4119] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4119] *** Queue Swap
+[4120] <0> Enters the CPU
+[4129] <0> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4130] <1> Enters the CPU
+[4139] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4140] <2> Enters the CPU
+[4149] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4149] *** Queue Swap
+[4150] <0> Enters the CPU
+[4156] <0> Finishes and moves to the Finished Queue
+[4157] <1> Enters the CPU
+[4166] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4167] <2> Enters the CPU
+[4176] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4176] *** Queue Swap
+[4177] <1> Enters the CPU
+[4186] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4187] <2> Enters the CPU
+[4196] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4196] *** Queue Swap
+[4197] <1> Enters the CPU
+[4206] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4207] <2> Enters the CPU
+[4216] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4216] *** Queue Swap
+[4217] <1> Enters the CPU
+[4226] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4227] <2> Enters the CPU
+[4236] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4236] *** Queue Swap
+[4237] <1> Enters the CPU
+[4246] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4247] <2> Enters the CPU
+[4256] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4256] *** Queue Swap
+[4257] <1> Enters the CPU
+[4266] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4267] <2> Enters the CPU
+[4276] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4276] *** Queue Swap
+[4277] <1> Enters the CPU
+[4286] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4287] <2> Enters the CPU
+[4296] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4296] *** Queue Swap
+[4297] <1> Enters the CPU
+[4306] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4307] <2> Enters the CPU
+[4316] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4316] *** Queue Swap
+[4317] <1> Enters the CPU
+[4326] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4327] <2> Enters the CPU
+[4336] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4336] *** Queue Swap
+[4337] <1> Enters the CPU
+[4346] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4347] <2> Enters the CPU
+[4356] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4356] *** Queue Swap
+[4357] <1> Enters the CPU
+[4366] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4367] <2> Enters the CPU
+[4376] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4376] *** Queue Swap
+[4377] <1> Enters the CPU
+[4386] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4387] <2> Enters the CPU
+[4396] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4396] *** Queue Swap
+[4397] <1> Enters the CPU
+[4406] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4407] <2> Enters the CPU
+[4416] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4416] *** Queue Swap
+[4417] <1> Enters the CPU
+[4426] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4427] <2> Enters the CPU
+[4436] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4436] *** Queue Swap
+[4437] <1> Enters the CPU
+[4446] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4447] <2> Enters the CPU
+[4456] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4456] *** Queue Swap
+[4457] <1> Enters the CPU
+[4466] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4467] <2> Enters the CPU
+[4476] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4476] *** Queue Swap
+[4477] <1> Enters the CPU
+[4486] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4487] <2> Enters the CPU
+[4496] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4496] *** Queue Swap
+[4497] <1> Enters the CPU
+[4506] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4507] <2> Enters the CPU
+[4516] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4516] *** Queue Swap
+[4517] <1> Enters the CPU
+[4526] <1> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4527] <2> Enters the CPU
+[4536] <2> Finishes its time slice and moves to the Expired Queue (Priority: 140, Timeslice: 10)
+[4536] *** Queue Swap
+[4537] <1> Enters the CPU
+[4541] <1> Finishes and moves to the Finished Queue
+[4542] <2> Enters the CPU
+[4544] <2> Finishes and moves to the Finished Queue
+
+Process <3>
+Turnarount Time = 1049
+Total CPU Time = 300
+Waiting Time = 749
+Percentage of CPU Utilization Time = 28.6
+Process <0>
+Turnarount Time = 4056
+Total CPU Time = 1200
+Waiting Time = 1956
+Percentage of CPU Utilization Time = 29.6
+Process <1>
+Turnarount Time = 4391
+Total CPU Time = 1200
+Waiting Time = 2291
+Percentage of CPU Utilization Time = 27.3
+Process <2>
+Turnarount Time = 4344
+Total CPU Time = 1200
+Waiting Time = 2244
+Percentage of CPU Utilization Time = 27.6
+
+Average Turnarount Time = 3460.000
+Average Waiting Time = 1810.000
+Average Percentage of CPU Utilization Time = 28.284
