@@ -14,6 +14,8 @@
 
 #define BUFF_SIZE	256
 #define ARG_COUNT	20
+#define space		' '
+#define bs		'\b'
 
 void forkPro(char **command){
 	unsigned int pid = fork();
@@ -86,10 +88,6 @@ int main(void)
 		char inbuffer[BUFF_SIZE];
 		int bytesRead = 0;
 		char *c = malloc(sizeof(char));
-		char *space = malloc(sizeof(char));
-		char *bs = malloc(sizeof(char));
-		*bs = '\b';
-		*space = ' ';
 		while (broken == 0){
 			read(0, c, 1); // Read one character
 			if (*c == 8 | *c == 127) { // Handle bs and del keys correctly
