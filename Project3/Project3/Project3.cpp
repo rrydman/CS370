@@ -48,7 +48,9 @@ Process::Process(int arr, int nice, vector<int> cpuB, vector<int> ioB) {
 void Process::calc_priority() {}
 void Process::calc_timeslice() {}
 
-void swap_queues(){}
+void swap_queues(vector<Process>& active, vector<Process>& expired){
+	active.swap(expired);
+}
 
 istream& read_input(istream& in, vector<Process>& processList){
 	if (in){
