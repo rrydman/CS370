@@ -1,5 +1,28 @@
-// Project 3 - Linux Scheduler
-// Ross Rydman - Feb 2014
+/* ------------------------
+CS370 Project 3 - Linux Scheduler
+Ross Rydman - Feb 2014
+---------------------------
+
+---------------------------
+What is working:
+	Queues using vectors (and iterators!)
+	Process class
+	Printing messages
+	Input read correctly, output formatted correctly
+	Relatively short main with most things broken out into functions
+	Swapping active/expired, moving processes between queues, etc
+---------------------------
+What isn't working:
+	Seems to be a bug somewhere in my main() logic that is throwing off my figures
+---------------------------
+What I didn't do:
+	Header files
+	Air-tight memory management
+	Error handling
+---------------------------
+To compile: gcc filename.cpp
+To run: ./a.out < input.txt
+--------------------------- */
 
 #include <iostream>
 #include <fstream>
@@ -26,7 +49,6 @@ public:
 	int timeslice;
 	int totalCPUtime;
 	int totalIOtime;
-	int totalIObursts;
 	vector<int> cpuBursts;
 	vector<int> ioBursts;
 	Process(int, int, vector<int>, vector<int>);
@@ -41,7 +63,6 @@ Process::Process(int start, int nice, vector<int> cpuB, vector<int> ioB) {
 	niceValue = nice;
 	cpuBursts = cpuB;
 	ioBursts = ioB;
-	totalIObursts = ioB.size();
 	startTime = start;
 	endTime = 0;
 	priority = 0;
@@ -54,16 +75,15 @@ Process::Process(int start, int nice, vector<int> cpuB, vector<int> ioB) {
 Process::~Process() {}
 
 void Process::calc_priority(void) {
-	// Initial priority (static priority)
+	// First time calculating priority (use nice value)
 	if (niceValue != 0){ 
 		priority = (int)(((niceValue + 20) / 39.0) * 30 + 0.5) + 105;
 		originalpriority = priority;
 		niceValue = 0;
 	}
-	// Not an initial priority (use bonus)
+	// Not first time (use bonus)
 	else { 
 		int bonus = 0;
-		//if (totalCPUtime == 0 || totalIOtime == 0) { bonus = 0; } // don't divide by zero
 		if (totalCPUtime < totalIOtime){
 			bonus = (int)(((1 - totalCPUtime / (double)totalIOtime) *(-5)) - 0.5);
 		}
@@ -73,12 +93,9 @@ void Process::calc_priority(void) {
 		priority = originalpriority + bonus;
 	}
 }
+
 void Process::calc_timeslice(void) {
 	timeslice = (int)((1 - priority / 140.0) * 290 + 0.5) + 10;
-}
-
-void swap_queues(vector<Process*>& active, vector<Process*>& expired){
-	active.swap(expired);
 }
 
 bool predicate_starttime(const Process* p1, const Process* p2){ return p1->startTime < p2->startTime; }
@@ -154,6 +171,7 @@ void print_finishes_io_active(Process &p){
 void print_queue_swap(){
 	cout << "[" << clock << "] *** Queue Swap" << endl;
 }
+
 void print_report(vector<Process*> &finishedQueue){
 	double avgtat = 0.0;
 	double avgwt = 0.0;
@@ -161,9 +179,9 @@ void print_report(vector<Process*> &finishedQueue){
 	vector<Process*>::iterator iter = finishedQueue.begin();
 	if (!finishedQueue.empty()) {
 		while (iter != finishedQueue.end()){ // for p in finishedQueue
-			int tat = (*iter)->endTime - (*iter)->startTime - (*iter)->totalIOtime;
-			int tct = (*iter)->totalCPUtime;
-			int wt = tat - tct;
+			double tat = (*iter)->endTime - (*iter)->startTime - (*iter)->totalIOtime;
+			double tct = (*iter)->totalCPUtime;
+			double wt = tat - tct;
 			double cut = 0.0;
 			if (tat != 0.0) cut = tct / tat;
 			// print stats for process
@@ -171,7 +189,7 @@ void print_report(vector<Process*> &finishedQueue){
 			cout << "Turnaround Time = " << tat << endl;
 			cout << "Total CPU Time = " << tct << endl;
 			cout << "Waiting Time = " << wt << endl;
-			cout << "Percentage of CPU Utilization Time = " << static_cast<float>(static_cast<int>(cut * 10.)) / 10. << endl;
+			cout << "Percentage of CPU Utilization Time = " << static_cast<double>(static_cast<int>(cut * 1000.)) / 1000. * 100<< endl; // one decimal place
 			avgtat += tat;
 			avgwt += wt;
 			avgcut += cut;
@@ -179,9 +197,9 @@ void print_report(vector<Process*> &finishedQueue){
 		}
 	}
 	int processCount = finishedQueue.size();
-	avgtat = static_cast<float>(static_cast<int>((avgtat / processCount) * 10.)) / 10.;
-	avgwt = static_cast<float>(static_cast<int>((avgwt / processCount) * 10.)) / 10.;
-	avgcut = static_cast<float>(static_cast<int>((avgcut / processCount) * 10.)) / 10.;
+	avgtat = static_cast<double>(static_cast<int>((avgtat / processCount) * 100.)) / 100.; // three decimal places
+	avgwt = static_cast<double>(static_cast<int>((avgwt / processCount) * 100.)) / 100.; // three decimal places
+	avgcut = static_cast<double>(static_cast<int>((avgcut / processCount) * 100000.)) / 100000 * 100.; // three decimal places
 	cout << endl;
 	cout << "Average Turnarount Time = " << avgtat << endl;
 	cout << "Average Waiting Time = " << avgwt << endl;
@@ -190,8 +208,13 @@ void print_report(vector<Process*> &finishedQueue){
 
 int main(){
 	vector<Process*> startQueue;
+	vector<Process*> activeQueue;
+	vector<Process*> expiredQueue;
+	vector<Process*> ioQueue;
+	vector<Process*> finishedQueue;
+	vector<Process*> cpu;
 	read_input(cin, startQueue);
-	sort(startQueue.begin(), startQueue.end(), predicate_starttime); // Sort startQueue by start time
+	sort(startQueue.begin(), startQueue.end(), predicate_starttime);
 	// Calculate initial priorities & timeslices
 	vector<Process*>::iterator iter = startQueue.begin();
 	if (!startQueue.empty()) {
@@ -201,11 +224,6 @@ int main(){
 			iter++;
 		}
 	}
-	vector<Process*> activeQueue;
-	vector<Process*> expiredQueue;
-	vector<Process*> ioQueue;
-	vector<Process*> finishedQueue;
-	vector<Process*> cpu;
 
 	while (true){
 		// Insert processes to the active queue if they are to start at this clock tick. (Calculate priority and time slice)
@@ -244,7 +262,7 @@ int main(){
 		}
 		// Perform CPU (decrement the time slice of the process in cpu)
 		if (!cpu.empty()){
-			cpu.front()->timeslice = cpu.front()->timeslice - 1;
+			cpu.front()->timeslice--;
 			cpu.front()->cpuBursts.front()--;
 			cpu.front()->totalCPUtime++;
 		}
@@ -276,6 +294,7 @@ int main(){
 					ioQueue.push_back(p);
 					print_finishes_cpu_io(*p);
 					cpu.erase(cpu.begin());
+					sort(ioQueue.begin(), ioQueue.end(), predicate_currentIOBleft);
 				}
 			}
 			// if p's timeslice is exhausted send to the expired queue and recalculate priority and timeslice
@@ -285,6 +304,7 @@ int main(){
 				expiredQueue.push_back(p);
 				print_finishes_timeslice_expired(*p);
 				cpu.erase(cpu.begin());
+				sort(expiredQueue.begin(), expiredQueue.end(), predicate_priority);
 			}
 		}
 		// If there is any process in the IO queue that is finished with its IO burst (there can be more than one, call this process p)
@@ -292,8 +312,9 @@ int main(){
 			vector<Process*>::iterator ioQiter = ioQueue.begin();
 			if (!ioQueue.empty()) {
 				while (ioQiter != ioQueue.end()){
+					// If current IO Burst is 0
 					if ((*ioQiter)->ioBursts.front() == 0) {
-						// Remove zero io burst
+						// Remove zero io burst from process
 						(*ioQiter)->ioBursts.erase((*ioQiter)->ioBursts.begin());
 						// If p's timeslice is exhausted move to the expired queue and recalculate the priority and timeslice
 						if ((*ioQiter)->timeslice == 0){
@@ -302,6 +323,7 @@ int main(){
 							expiredQueue.push_back((*ioQiter));
 							print_finishes_io_expired(*(*ioQiter));
 							ioQiter = ioQueue.erase(ioQiter);
+							sort(expiredQueue.begin(), expiredQueue.end(), predicate_priority);
 						}
 						// If p still has timeslice left insert p into the active queue.
 						else{
@@ -316,11 +338,11 @@ int main(){
 				}
 			}
 		}
-		// If the startup queue, ready queue, expired queue, IO queue, and the CPU are all empty then break out of the while loop (simulation complete)
+		// If the startup queue, ready queue, expired queue, IO queue, and the CPU are all empty then break (done!)
 		if (startQueue.empty() && activeQueue.empty() && expiredQueue.empty() && ioQueue.empty() && cpu.empty()) break;
 		// If the ready queue and cpu are empty and the expired queue is not empty then swap the expired/active queues
 		if (activeQueue.empty() && cpu.empty() && !expiredQueue.empty()) {
-			swap_queues(activeQueue, expiredQueue);
+			activeQueue.swap(expiredQueue);
 			print_queue_swap();
 		}
 		clock++;
@@ -328,7 +350,6 @@ int main(){
 
 	print_report(finishedQueue);
 
-	// Note to self: Run with cntl+f5 to keep console open on windows - or use breakpoint on line below
 	return 0;
 }
 
