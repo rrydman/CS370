@@ -1,6 +1,6 @@
 /* ------------------------
 CS370 Project 3 - Linux Scheduler
-Ross Rydman - Feb 2014
+Ross Rydman - (c) Feb 2014
 ---------------------------
 
 ---------------------------
@@ -13,14 +13,15 @@ What is working:
 	Swapping active/expired, moving processes between queues, etc
 ---------------------------
 What isn't working:
-	Seems to be a bug somewhere in my main() logic that is throwing off my figures
+	Hopefully the figures are right - hard to check since the example output is from a different semester
+	Rounding could work better
 ---------------------------
 What I didn't do:
 	Header files
 	Air-tight memory management
 	Error handling
 ---------------------------
-To compile: gcc filename.cpp
+To compile: g++ filename.cpp
 To run: ./a.out < input.txt
 --------------------------- */
 
@@ -35,7 +36,7 @@ To run: ./a.out < input.txt
 using namespace std;
 
 // Globals
-int clock = 0;
+int clck = 0;
 int pidCounter = 0;
 
 class Process {
@@ -76,7 +77,7 @@ Process::~Process() {}
 
 void Process::calc_priority(void) {
 	// First time calculating priority (use nice value)
-	if (niceValue != 0){ 
+	if (originalpriority == 0){ 
 		priority = (int)(((niceValue + 20) / 39.0) * 30 + 0.5) + 105;
 		originalpriority = priority;
 		niceValue = 0;
@@ -145,37 +146,38 @@ istream& read_input(istream& in, vector<Process*>& sQueue){
 }
 
 void print_arrival(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Enters ready queue (Priority: " << p.priority << ", TimeSlice: " << p.timeslice << ")" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Enters ready queue (Priority: " << p.priority << ", TimeSlice: " << p.timeslice << ")" << endl;
 }
 void print_enter_CPU(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Enters the CPU" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Enters the CPU" << endl;
 }
 void print_preempted(Process &preempter, Process &preemptee){
-	cout << "[" << clock << "] <" << preempter.pid << "> Preempts Process " << preemptee.pid << endl;
+	cout << "[" << clck << "] <" << preempter.pid << "> Preempts Process " << preemptee.pid << endl;
 }
 void print_finishes_all_CPU_bursts(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Finishes and moves to the Finished Queue" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Finishes and moves to the Finished Queue" << endl;
 }
 void print_finishes_cpu_io(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Moves to the IO Queue" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Moves to the IO Queue" << endl;
 }
 void print_finishes_timeslice_expired(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Finishes its time slice and moves to the Expired Queue (Priority: " << p.priority << ", TimeSlice: " << p.timeslice << ")" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Finishes its time slice and moves to the Expired Queue (Priority: " << p.priority << ", TimeSlice: " << p.timeslice << ")" << endl;
 }
 void print_finishes_io_expired(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Finishes IO and moves to the Expired Queue (Priority: " << p.priority << ", TimeSlice: " << p.timeslice << ")" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Finishes IO and moves to the Expired Queue (Priority: " << p.priority << ", TimeSlice: " << p.timeslice << ")" << endl;
 }
 void print_finishes_io_active(Process &p){
-	cout << "[" << clock << "] <" << p.pid << "> Finishes IO and moves to the Ready Queue" << endl;
+	cout << "[" << clck << "] <" << p.pid << "> Finishes IO and moves to the Ready Queue" << endl;
 }
 void print_queue_swap(){
-	cout << "[" << clock << "] *** Queue Swap" << endl;
+	cout << "[" << clck << "] *** Queue Swap" << endl;
 }
 
 void print_report(vector<Process*> &finishedQueue){
 	double avgtat = 0.0;
 	double avgwt = 0.0;
 	double avgcut = 0.0;
+	cout << endl;
 	vector<Process*>::iterator iter = finishedQueue.begin();
 	if (!finishedQueue.empty()) {
 		while (iter != finishedQueue.end()){ // for p in finishedQueue
@@ -215,24 +217,17 @@ int main(){
 	vector<Process*> cpu;
 	read_input(cin, startQueue);
 	sort(startQueue.begin(), startQueue.end(), predicate_starttime);
-	// Calculate initial priorities & timeslices
-	vector<Process*>::iterator iter = startQueue.begin();
-	if (!startQueue.empty()) {
-		while (iter != startQueue.end()){
-			(*iter)->calc_priority();
-			(*iter)->calc_timeslice();
-			iter++;
-		}
-	}
 
 	while (true){
 		// Insert processes to the active queue if they are to start at this clock tick. (Calculate priority and time slice)
 		if (!startQueue.empty()){
 			vector<Process*>::iterator startIter = startQueue.begin();
 			while (startIter != startQueue.end()){
-				if ((*startIter)->startTime == clock) {
-					activeQueue.push_back(startQueue.front());
-					print_arrival(*startQueue.front());
+				if ((*startIter)->startTime == clck) {
+					(*startIter)->calc_priority();
+					(*startIter)->calc_timeslice();
+					activeQueue.push_back((*startIter));
+					print_arrival(*(*startIter));
 					startIter = startQueue.erase(startIter);
 				}
 				else{
@@ -284,7 +279,7 @@ int main(){
 				p->cpuBursts.erase(p->cpuBursts.begin());
 				// if p is done with all cpu bursts send to the finished queue
 				if (p->cpuBursts.empty()){
-					p->endTime = clock;
+					p->endTime = clck;
 					finishedQueue.push_back(p);
 					print_finishes_all_CPU_bursts(*p);
 					cpu.erase(cpu.begin());
@@ -345,7 +340,7 @@ int main(){
 			activeQueue.swap(expiredQueue);
 			print_queue_swap();
 		}
-		clock++;
+		clck++;
 	}
 
 	print_report(finishedQueue);
