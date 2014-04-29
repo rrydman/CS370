@@ -1,11 +1,16 @@
 /*
-----------------------------------------------------
-CS370 Project 6 - Sockets
+----------------------------------------------------------------------
+CS370 Project 6 - Peterson's Leader Election w/ Sockets
 Ross Rydman - (c) April 2014
-----------------------------------------------------
-To compile: gcc filename.c
-To run: ./a.out <0|1>
-----------------------------------------------------
+----------------------------------------------------------------------
+To compile: gcc project6a.c
+To run: ./a.out
+Open multiple shells and enter the nodeid, total nodes, and 
+node UID on each shell. Once all nodes have had input done, 
+leader election will commence, and shell 0 will show final output.
+----------------------------------------------------------------------
+This code contains no error checking. Please be correct with your input.
+----------------------------------------------------------------------
 */
 
 #include <stdio.h>
@@ -13,26 +18,17 @@ To run: ./a.out <0|1>
 #include <sys/un.h>
 #include <stdlib.h>
 
-// Constants
-#define SERVER 0
-#define CLIENT 1
-
 // Globals
 typedef enum { false, true } bool;
 int phaseNum, nodeid, totalNodes, nodeUID, tempUID;
-bool isActiveNode = true;
-bool leader = false;
+bool isActiveNode, leader;
 
 // Functions
-void findLeader(int isActiveNode);
-void createNode();
-void communicate(int serverDescriptor, int clientDescriptor);
+void findLeader(int uid, int prevDescriptor, int nextDescriptor);
 int createServerConnection(char *socketName);
 int createClientConnection(char *socketName);
-char *getSocketName(int index1, int index2);
 
 int main() {
-	// Input
 	printf("Please enter nodeid: \n");
 	scanf("%d", &nodeid);
 	printf("Please enter total number of nodes: \n");
@@ -40,87 +36,97 @@ int main() {
 	printf("Please enter UID for current node: \n");
 	scanf("%d", &nodeUID);
 
-	int clientDescriptor1, clientDescriptor2, serverDescriptor;
-	char *clientSocketName, *serverSocketName;
+	// Socket named "zeroNodePrev"
+	char zeroNodePrev[] = "zeroNodePrev";
+	// Socket named "zeroNodeNext"
+	char zeroNodeNext[] = "zeroNodeNext";
+	// Socket named "nodeid - 1"
+	char nodeMinus1[100];
+	sprintf(nodeMinus1, "%d", nodeid - 1);
+	// Socket named "nodeid"
+	char node[100];
+	sprintf(node, "%d", nodeid);
+
+	int prevDescriptor, nextDescriptor;
 	if (nodeid == 0) {
+		// Node is 0 (first node in ring)
 		// Create two server connections: one for node 1, one for node n-1
-		clientSocketName = getSocketName(SERVER, CLIENT); // todo: change
-		serverSocketName = getSocketName(SERVER, CLIENT); // todo: change
-		clientDescriptor1 = createServerConnection(serverSocketName);
-		clientDescriptor2 = createServerConnection(clientSocketName);
-		//printf("server connection created %d \n",clientDescriptor);
-		communicate(clientDescriptor1, clientDescriptor2);
-	} else {
+		nextDescriptor = createServerConnection(zeroNodeNext);
+		prevDescriptor = createServerConnection(zeroNodePrev);
+	} else if (nodeid == totalNodes - 1) {
+		// Node is n-1 (last node in ring)
+		// Create two client connections: one for node n-1, one for node 0
+		prevDescriptor = createClientConnection(nodeMinus1);
+		nextDescriptor = createClientConnection(zeroNodePrev);
+	}
+	else if (nodeid == 1){
+		// Node is 1 (second node in ring)
 		// Create one server and one client connection
-		clientSocketName = getSocketName(SERVER, CLIENT); // todo: change
-		serverSocketName = getSocketName(SERVER, CLIENT); // todo: change
-		// Server is node n+1
-		serverDescriptor = createClientConnection(clientSocketName);
-		// Client is node n-1
-		clientDescriptor1 = createServerConnection(serverSocketName);
-		//printf("client connection created %d \n",serverDescriptor);
-		communicate(serverDescriptor, clientDescriptor1);
-	} 
+		// Client points to previous node (node 0)
+		// Server points to next node (n)
+		prevDescriptor = createClientConnection(zeroNodeNext);
+		nextDescriptor = createServerConnection(node);
+	} else {
+		// Node is any other node (middle nodes in ring)
+		// Create one server and one client connection
+		// Client points to previous node (n-1)
+		// Server points to next node (n)
+		prevDescriptor = createClientConnection(nodeMinus1);
+		nextDescriptor = createServerConnection(node);
+	}
+	findLeader(nodeUID, prevDescriptor, nextDescriptor);
 	return 0;
 }
 
-void findLeader(int isActiveNode){
+void findLeader(int nodeUID, int prevDescriptor, int nextDescriptor){
+	phaseNum = 1;
+	tempUID = nodeUID;
+	leader = false;
+	isActiveNode = true;
+	int oneHopTempUID, twoHopTempUID;
+
 	while (!leader){
 		if (isActiveNode){
-		// Active node:
+		// active node:
+			// Print phase info
+			printf("[%d] [%d] [%d] \n", phaseNum, nodeUID, tempUID);
 			// write temp uid
+			send(nextDescriptor, &tempUID, sizeof(int), 0);
 			// read one hop temp uid
+			recv(prevDescriptor, &oneHopTempUID, sizeof(int), 0);
 			// write one hop temp uid
-
+			send(nextDescriptor, &oneHopTempUID, sizeof(int), 0);
 			// read two hop temp uid
-			// if one hop temp uid == temp uid
+			recv(prevDescriptor, &twoHopTempUID, sizeof(int), 0);
+
+			if (oneHopTempUID == tempUID){
 				// this node is the leader
-			// else if one hop temp uid > two hop temp uid && one hop temp uid > temp uid
+				leader = true;
+				printf("Leader found: %d \n", nodeUID);
+			} else if (oneHopTempUID > twoHopTempUID && oneHopTempUID > tempUID) {
 				// this node continues to be an active node
 				// temp uid = one hop temp uid
-			// else
+				tempUID = oneHopTempUID;
+			} else {
 				// this node becomes a relay node
+				isActiveNode = false;
+			}
 		} else {
 		// relay node:
 			// read temp uid
+			recv(prevDescriptor, &tempUID, sizeof(int), 0);
 			// write temp uid
+			send(nextDescriptor, &tempUID, sizeof(int), 0);
 			// read temp uid
+			recv(prevDescriptor, &tempUID, sizeof(int), 0);
 			// write temp uid
+			send(nextDescriptor, &tempUID, sizeof(int), 0);
 		}
+		phaseNum++;
 	}
 }
 
-void createNode(){
-
-}
-
-// Todo: change this to be intelligent
-char *getSocketName(int index1, int index2) {
-	char *socketName = (char *)calloc(256, sizeof(char));
-	socketName = "mySocket";
-	return socketName;
-}
-
-void communicate(int serverDescriptor, int clientDescriptor) {
-	int i = 0;
-	while (i<totalNodes)
-	{
-		if (nodeid == 0){
-			int neighborValue;
-			//To receive message via socket
-			recv(clientDescriptor, &neighborValue, sizeof(int), 0);
-			printf("received %d\n", neighborValue);
-		}
-		else {
-			int value = rand() % 100;
-			//To send a message via socket
-			send(serverDescriptor, &value, sizeof(int), 0);
-			printf("sent %d\n", value);
-		}
-		i++;
-	}
-}
-
+// From example code
 int createClientConnection(char* socketName) {
 	int descriptor;
 	//The call to the function ‘socket()’ creates an UN-named socket inside the kernel and returns an integer known as socket descriptor.
@@ -143,6 +149,7 @@ int createClientConnection(char* socketName) {
 	return descriptor;
 }
 
+// From example code
 int createServerConnection(char* socketName) {
 	int descriptor;
 	//To create endpoint for communication
