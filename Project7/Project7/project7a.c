@@ -37,34 +37,68 @@ void destroy_int_array(int** theArray, int n) {
 	free(theArray);
 }
 
+// Helper function to tokenize a string
+void splitString(char *str, char **splitstr)
+{
+	char *p;
+	int i = 0;
+	p = strtok(str, " \n");
+	while (p != NULL)
+	{
+		splitstr[i] = malloc(strlen(p) + 1);
+		if (splitstr[i]){
+			strcpy(splitstr[i], p);
+		}
+		i++;
+		p = strtok(NULL, " \n");
+	}
+}
+
 int main() {
-	// Handle input from redirection
+	/* ------------ Start ------------ */
+	/*  Handle input from redirection  */
+	/* ------------------------------- */
 	char *linebuffer = (char *)calloc(BUFF_SIZE, sizeof(char));
-	fgets(linebuffer, BUFF_SIZE, stdin);
+	char *line[BUFF_SIZE] = { NULL };
+	int i,j;
+	fgets(linebuffer, BUFF_SIZE, stdin); // numProcesses
 	numProcesses = atoi(linebuffer);
-	fgets(linebuffer, BUFF_SIZE, stdin);
+	fgets(linebuffer, BUFF_SIZE, stdin); // numResources
 	numResources = atoi(linebuffer);
-	// existing[numResources]
+	fgets(linebuffer, BUFF_SIZE, stdin); // blank line
+	// Create and fill existing[] and available[] arrays
 	int** existing = (int**)malloc(numResources * sizeof(int*));
-	// fill existing[] array from input
-		// todo
-
-	// Available[numResources] (initially same as Available)
 	int** available = (int**)malloc(numResources * sizeof(int*));
-	// copy existing[] to available[]
-		// todo
-
-	// allocation[][]
+	fgets(linebuffer, BUFF_SIZE, stdin);
+	splitString(linebuffer, line);
+	for (i = 0; i < numResources; i++) existing[i] = atoi(line[i]);
+	for (i = 0; i < numResources; i++) available[i] = atoi(line[i]);
+	fgets(linebuffer, BUFF_SIZE, stdin); // blank line
+	// Create and fill allocation[][]
 	int** allocation = make_int_array(numProcesses, numResources);
-	// fill allocation[] array from input
-		// todo
-
-	// max[][]
+	for (i = 0; i < numProcesses; i++) { // Rows
+		fgets(linebuffer, BUFF_SIZE, stdin);
+		splitString(linebuffer, line);
+		for (j = 0; j < numResources; j++){ // Cols
+			allocation[i][j] = atoi(line[j]);
+		}
+	}
+	fgets(linebuffer, BUFF_SIZE, stdin); // blank line
+	// Create and fill max[][]
 	int** max = make_int_array(numProcesses, numResources);
-	// fill max[] array from input
-		// todo
+	for (i = 0; i < numProcesses; i++) { // Rows
+		fgets(linebuffer, BUFF_SIZE, stdin);
+		splitString(linebuffer, line);
+		for (j = 0; j < numResources; j++){ // Cols
+			max[i][j] = atoi(line[j]);
+		}
+	}
+	/* ------------- End ------------- */
+	/*            Input done           */
+	/* ------------------------------- */
 
-	// Need[][]
+
+	// create and fill need[][]
 	int** need = make_int_array(numProcesses, numResources);
 
 	// Compute need
@@ -72,34 +106,42 @@ int main() {
 	// Output
 	printf("Bankers Algorithm: \n\n");
 	printf("Total Existing Resources: \n");
-	// for numResources in Existing[]
-		// printf("%d", Existing[i]);
+	for (i = 0; i < numResources; i++) printf("%d ", existing[i]);
+	printf("\n\n");
 
 	printf("Allocation Table: \n");
-	// for rows in allocation[i][]
-		// for cols in allocation[][j]
-			// printf("%d", allocation[i][j]);
-		// printf("\n");
+	for (i = 0; i < numProcesses; i++) { // Rows
+		for (j = 0; j < numResources; j++){ // Cols
+			printf("%d ", allocation[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
 
 	printf("Max Table: \n");
-	// for rows in Max[i][]
-		// for cols in Max[][j]
-			// printf("%d", Max[i][j]);
-		// printf("\n");
+	for (i = 0; i < numProcesses; i++) { // Rows
+		for (j = 0; j < numResources; j++){ // Cols
+			printf("%d ", max[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
 
-	printf("Total Existing Resources: \n");
-	// for numResources in available[]
-		// printf("%d", available[i]);
+	printf("Available Resources: \n");
+	for (i = 0; i < numResources; i++) printf("%d ", available[i]);
+	printf("\n\n");
 
 	printf("Need Table: \n");
-	// for rows in Need[i][]
-		// for cols in Need[][j]
-			// printf("%d", Need[i][j]);
-		// printf("\n");
+	for (i = 0; i < numProcesses; i++) { // Rows
+		for (j = 0; j < numResources; j++){ // Cols
+			printf("%d ", need[i][j]);
+		}
+		printf("\n");
+	}
+	printf("\n");
 
 	// satisfy processes
 	// print state
-
 
 	// Cleanup memory
 	free(existing);
