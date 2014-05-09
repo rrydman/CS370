@@ -154,3 +154,11 @@ $RECYCLE.BIN/
 
 # Mac desktop service store files
 .DS_Store
+ConsoleApplication1/ConsoleApplication1.sln
+ConsoleApplication1/ConsoleApplication1/ConsoleApplication1.cpp
+ConsoleApplication1/ConsoleApplication1/ConsoleApplication1.vcxproj
+ConsoleApplication1/ConsoleApplication1/ConsoleApplication1.vcxproj.filters
+ConsoleApplication1/ConsoleApplication1/ReadMe.txt
+ConsoleApplication1/ConsoleApplication1/stdafx.cpp
+ConsoleApplication1/ConsoleApplication1/stdafx.h
+ConsoleApplication1/ConsoleApplication1/targetver.h
